@@ -10,15 +10,8 @@ repositories {
 }
 
 test {
-//    useTestNG() {
-//        useDefaultListeners = true
-//        include "com.starbucks.test"
-//    }
-//    useTestNG()
-//    options.suites("src/test/resources/testng.xml")
-
-    useTestNG() {
-//       suites 'src/test/resources/runlist/testng.xml'
+    useTestNG {
+        suites 'src/test/resources/testng.xml'
     }
 }
 
