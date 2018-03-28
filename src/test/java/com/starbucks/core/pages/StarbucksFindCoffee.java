@@ -8,8 +8,7 @@ import org.openqa.selenium.WebElement;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class StarbucksFindCoffee {
-
+public class StarbucksFindCoffee extends Page {
     private static StarbucksFindCoffee starbucksFindCoffee;
 
     private StarbucksFindCoffee() {
@@ -35,7 +34,7 @@ public class StarbucksFindCoffee {
         Driver
                 .getDriver()
                 .findElement(byQuestion)
-                .findElements(By.tagName("Button"))
+                .findElements(SELECTOR_TAG_BUTTON)
                 .stream()
                 .filter(e -> e.getAttribute("data-event").equals(dataEventValue))
                 .filter(WebElement::isDisplayed)
@@ -55,9 +54,10 @@ public class StarbucksFindCoffee {
     }
 
     private String findAnswerText(String question) {
-        return Driver.getDriver()
+        return Driver
+                .getDriver()
                 .findElement(By.className(question))
-                .findElements(By.className("collapsed-selection"))
+                .findElements(SELECTOR_CLASS_COLLAPSED_SELECTION)
                 .stream()
                 .filter(WebElement::isDisplayed)
                 .findFirst()
@@ -66,14 +66,17 @@ public class StarbucksFindCoffee {
     }
 
     public StarbucksFindCoffee findMyCoffee() {
-        Driver.getDriver().findElement(By.id("find-my-coffee")).click();
+        Driver
+                .getDriver()
+                .findElement(SELECTOR_ID_FIND_MY_COFFEE)
+                .click();
         return instance();
     }
 
     public WebElement getRecommendation() {
-        By byIdFeaturedCoffeeStack = By.id("featured-coffees-stack");
-        SeleniumUtil.addExplicitWait(2, byIdFeaturedCoffeeStack);
-
-        return Driver.getDriver().findElement(byIdFeaturedCoffeeStack);
+        SeleniumUtil.addExplicitWait(2, SELECTOR_ID_FEATURED_COFFEE_STACK);
+        return Driver
+                .getDriver()
+                .findElement(SELECTOR_ID_FEATURED_COFFEE_STACK);
     }
 }

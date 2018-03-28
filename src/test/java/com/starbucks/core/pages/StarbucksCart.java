@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class StarbucksCart {
+public class StarbucksCart extends Page {
     private static StarbucksCart starbucksCart;
 
     private StarbucksCart() {
@@ -22,12 +22,12 @@ public class StarbucksCart {
     private String findCartElementFromFirstItem(String dataThAttribute) {
         return Driver
                 .getDriver()
-                .findElements(By.tagName("tbody"))
+                .findElements(SELECTOR_TAG_TBODY)
                 .stream()
                 .filter(we1 -> !"".equals(we1.getAttribute("id")))
                 .findFirst()
                 .get()
-                .findElements(By.tagName("td"))
+                .findElements(SELECTOR_TAG_TD)
                 .stream()
                 .filter(we -> {
                     String attribute = we.getAttribute("data-th");
@@ -43,16 +43,16 @@ public class StarbucksCart {
                 .intValue();
     }
 
-    private String getFirstElementInCartSummary(String tag) {
+    private String getFirstElementInCartSummary(By tagName) {
         return Driver
                 .getDriver()
-                .findElement(By.id("cart_summary"))
-                .findElement(By.tagName("tbody"))
-                .findElements(By.tagName("tr"))
+                .findElement(SELECTOR_ID_CART_SUMMARY)
+                .findElement(SELECTOR_TAD_TBODY)
+                .findElements(SELECTOR_TAG_TR)
                 .stream()
                 .findFirst()
                 .get()
-                .findElement(By.tagName(tag))
+                .findElement(tagName)
                 .getText();
 
     }
@@ -77,10 +77,10 @@ public class StarbucksCart {
     }
 
     public String getFirstElementInCartDescription() {
-        return getFirstElementInCartSummary("th");
+        return getFirstElementInCartSummary(SELECTOR_TAG_TH);
     }
 
     public int getFirstElementInCartPrice() {
-        return parsePriceToInt(getFirstElementInCartSummary("td"));
+        return parsePriceToInt(getFirstElementInCartSummary(SELECTOR_TAG_TD));
     }
 }
