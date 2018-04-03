@@ -7,7 +7,7 @@ public class StarbucksTest {
 
     @BeforeSuite(alwaysRun = true)
     public void beforeSuite() {
-        System.setProperty("webdriver.gecko.driver", "C:\\selenium\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "src/test/resources/geckodriver.exe");
         Driver.setupDriver();
     }
 
