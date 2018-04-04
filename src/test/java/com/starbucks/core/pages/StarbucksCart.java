@@ -6,7 +6,14 @@ import org.openqa.selenium.By;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class StarbucksCart extends Page {
+public class StarbucksCart {
+    private static final By SELECTOR_TAG_TD = By.tagName("td");
+    private static final By SELECTOR_TAG_TBODY = By.tagName("tbody");
+    private static final By SELECTOR_ID_CART_SUMMARY = By.id("cart_summary");
+    private static final By SELECTOR_TAD_TBODY = By.tagName("tbody");
+    private static final By SELECTOR_TAG_TR = By.tagName("tr");
+    private static final By SELECTOR_TAG_TH = By.tagName("th");
+
     private static StarbucksCart starbucksCart;
 
     private StarbucksCart() {

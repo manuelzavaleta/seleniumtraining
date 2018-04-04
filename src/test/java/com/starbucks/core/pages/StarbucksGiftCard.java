@@ -9,7 +9,26 @@ import org.openqa.selenium.WebElement;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class StarbucksGiftCard extends Page {
+public class StarbucksGiftCard {
+    private static final By SELECTOR_TAG_TD = By.tagName("td");
+    private static final By SELECTOR_ID_EGIFT_CATEGORIES = By.id("egift-categories");
+    private static final By SELECTOR_ID_MESSAGE = By.id("message");
+    private static final By SELECTOR_ID_RECIPIENT_NAME = By.id("recipient_name");
+    private static final By SELECTOR_ID_PRE_RANGE = By.id("pre_range");
+    private static final By SELECTOR_TAG_LABEL = By.tagName("label");
+    private static final By SELECTOR_ID_SENDER_NAME = By.id("sender_name");
+    private static final By SELECTOR_ID_SENDER_EMAIL = By.id("sender_email");
+    private static final By SELECTOR_ID_RECIPIENT_EMAIL = By.id("recipient_email");
+    private static final By SELECTOR_CLASS_UI_DATEPICKER_TRIGGER = By.className("ui-datepicker-trigger");
+    private static final By SELECTOR_CLASS_UI_DATEPICKER_DIV = By.id("ui-datepicker-div");
+    private static final By SELECTOR_CLASS_UI_DATEPICKER_NEXT = By.className("ui-datepicker-next");
+    private static final By SELECTOR_CLASS_UI_DATEPICKER_CALENDAR = By.className("ui-datepicker-calendar");
+    private static final By SELECTOR_CLASS_ACTION = By.className("action");
+    private static final By SELECTOR_CLASS_CART_TABLE = By.className("cart_table");
+    private static final By SELECTOR_ID_CAROUSEL_SCROLLABLE = By.id("carousel-scrollable");
+    private static final By SELECTOR_TAG_IMG = By.tagName("img");
+    private static final By SELECTOR_TAG_LI = By.tagName("li");
+
     private static StarbucksGiftCard starbucksGiftCard;
 
     private StarbucksGiftCard() {

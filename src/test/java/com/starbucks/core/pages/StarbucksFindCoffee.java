@@ -8,7 +8,12 @@ import org.openqa.selenium.WebElement;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class StarbucksFindCoffee extends Page {
+public class StarbucksFindCoffee {
+    private static final By SELECTOR_TAG_BUTTON = By.tagName("Button");
+    private static final By SELECTOR_CLASS_COLLAPSED_SELECTION = By.className("collapsed-selection");
+    private static final By SELECTOR_ID_FIND_MY_COFFEE = By.id("find-my-coffee");
+    private static final By SELECTOR_ID_FEATURED_COFFEE_STACK = By.id("featured-coffees-stack");
+
     private static StarbucksFindCoffee starbucksFindCoffee;
 
     private StarbucksFindCoffee() {

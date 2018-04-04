@@ -8,7 +8,14 @@ import org.openqa.selenium.WebElement;
 
 import java.util.stream.Collectors;
 
-public class StarbucksHome extends Page {
+public class StarbucksHome {
+    private static final By SELECTOR_ID_NAV = By.id("nav");
+    private static final By SELECTOR_TAG_LI = By.tagName("li");
+    private static final By SELECTOR_ID_NAV_COFFEE = By.id("nav_coffee");
+    private static final By SELECTOR_LINK_TEXT_FIND_YOUR_PERFECT_COFFEE = By.linkText("Find Your Perfect Coffee");
+    private static final By SELECTOR__ID_NAV_GIFT_CARDS = By.id("nav_gift_cards");
+    private static final By SELECTOR_LINK_TEXT_GIVE_A_GIFT_BY_EMAIL = By.linkText("Give a Gift by Email");
+
     private static StarbucksHome starbucksHome;
 
     private StarbucksHome() {
