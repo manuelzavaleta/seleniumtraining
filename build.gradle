@@ -13,8 +13,6 @@ test {
     useTestNG {
         suites 'src/test/resources/testng.xml'
         listeners << 'org.testng.reporters.EmailableReporter'
-        listeners << 'listeners.ExtentReporter'
-        listeners << 'listeners.TestResultListenerAdapter'
     }
 
     reports.html.enabled = false
