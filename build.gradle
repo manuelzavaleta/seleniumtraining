@@ -15,7 +15,7 @@ test {
         listeners << 'org.testng.reporters.EmailableReporter'
     }
 
-    reports.html.enabled = false
+    reports.html.enabled = true
 }
 
 dependencies {
