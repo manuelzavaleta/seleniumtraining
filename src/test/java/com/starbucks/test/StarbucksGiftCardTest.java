@@ -39,7 +39,7 @@ public class StarbucksGiftCardTest extends StarbucksTest {
         Assert.assertEquals(starbucksCart.getDeliveryDate(), deliveryDate);
         Assert.assertEquals(starbucksCart.getRecipientNameAndMessage(), String.format("%s\n%s", recipientName, message));
 
-        Assert.assertEquals(starbucksCart.getFirstElementInCartDescription(), String.format("1 %s", "Military Appreciation"));
+        Assert.assertEquals(starbucksCart.getFirstElementInCartDescription(), String.format("1 %s", "Military AppreciationX"));
         Assert.assertEquals(starbucksCart.getFirstElementInCartPrice(), amount);
     }
 }
